@@ -1,0 +1,56 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Study Mode</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Study Mode</h1>
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="studyModeToggle">
+          <span class="slider round"></span>
+        </label>
+        <span id="statusText">OFF</span>
+      </div>
+    </div>
+    
+    <div id="setupView" class="view">
+      <div class="form-group">
+        <label for="studyTopic">What are you studying?</label>
+        <input type="text" id="studyTopic" placeholder="Enter your study topic">
+      </div>
+      
+      <div class="form-group">
+        <label for="apiSelect">AI Model</label>
+        <select id="apiSelect">
+          <option value="openai">OpenAI</option>
+          <option value="deepseek">DeepSeek</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="apiKey">API Key</label>
+        <input type="password" id="apiKey" placeholder="Enter your API key">
+      </div>
+      
+      <button id="saveButton" class="btn">Save Settings</button>
+    </div>
+    
+    <div id="activeView" class="view hidden">
+      <div class="status-box">
+        <p>Currently studying: <span id="currentTopic">Programming</span></p>
+        <p>Videos watched: <span id="videosWatched">0</span></p>
+        <p>Videos blocked: <span id="videosBlocked">0</span></p>
+      </div>
+      
+      <button id="editButton" class="btn secondary">Edit Settings</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
